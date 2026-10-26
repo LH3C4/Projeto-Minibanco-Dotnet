@@ -18,12 +18,27 @@ O sistema simula o funcionamento de um banco através das seguintes regras:
 *   **Relatório Gerencial:** O sistema faz a varredura das movimentações e emite alertas automatizados de relacionamento (ex: sugerir produtos de crédito para contas com muitos saques ou revisão de pacote para contas com muitas tarifas).
 
 ## **Instruções para execução**
+Por se tratar de uma aplicação de linha de comando poderá ser executada tanto no CMD / PowerShell (em sistemas Windows)
+ou no Bash (Linux e Mac);
 
 **Pré-requisitos:**
 *   SDK do [.NET 10](https://dotnet.microsoft.com/) instalado na máquina.
 *   Git instalado.
 
 **Passo a passo:**
-1. Clone o repositório para a sua máquina local[cite: 5]:
-   ```bash
-   git clone [https://github.com/LH3C4/Projeto-Minibanco-Dotnet.git](https://github.com/LH3C4/Projeto-Minibanco-Dotnet.git)
+1. Clone o repositório para a sua máquina local:
+   bash / cmd
+   git clone https://github.com/LH3C4/Projeto-Minibanco-Dotnet.git
+
+2. Navegue até o diretório principal da aplicação de console:
+    bash / cmd
+    cd Projeto-Minibanco-Dotnet/src/MiniBanco.ConsoleApp
+
+3. Realize a compilação do projeto para garantir que as dependências estão corretas:
+    bash / cmd
+    dotnet build
+
+4. Execute a aplicação:
+    bash / cmd
+    dotnet run
+    Utilize o menu interativo no terminal para criar contas, realizar depósitos/saques, aplicar fechamentos e consultar o relatório completo do Motor de Análise.
