@@ -9,7 +9,7 @@ namespace MiniBanco.ConsoleApp.Models
     {
         public string Titular {get; private set; }
         public int Numero {get; private set; }
-        public decimal Saldo {get; private set;}
+        public decimal Saldo {get; protected set;}
         public List<Transacao> Extrato {get; private set;}
 
         public Conta(string titular, int numero, decimal saldo)

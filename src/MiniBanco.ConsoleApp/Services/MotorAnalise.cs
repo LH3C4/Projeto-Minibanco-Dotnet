@@ -103,7 +103,7 @@ namespace MiniBanco.ConsoleApp.Services
                 }
             }
 
-            Console.WriteLine("\n--- Recomendação Gerencial (RF08) ---");
+            Console.WriteLine("\n--- Recomendação Gerencial ---");
 
             if (qtdTarifas >= 3)
             {

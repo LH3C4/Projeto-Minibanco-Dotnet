@@ -31,22 +31,24 @@ namespace MiniBanco.ConsoleApp
 
                 switch (opcao)
                 {
-                    case "1":
-                        Console.WriteLine("\n---- ABRIR NOVA CONTA ----");
+                   case "1":
+                        Console.WriteLine("\n--- ABRIR NOVA CONTA ---");
                         Console.WriteLine("1 - Conta Corrente | 2 - Conta Poupança | 3 - Conta Salário");
                         Console.Write("Tipo: ");
                         string tipoConta = Console.ReadLine();
 
                         Console.Write("Titular: ");
                         string titular = Console.ReadLine();
-
+                        
+                        // Esta é a linha que faltava no seu terminal!
+                        Console.Write("Número da Conta: ");
+                        int numero = int.Parse(Console.ReadLine());
+                        
                         Console.Write("Saldo Inicial: ");
                         decimal saldo = decimal.Parse(Console.ReadLine());
 
                         try
                         {
-                            int numero = contas.Count + 1;
-
                             if (tipoConta == "1")
                             {
                                 Console.Write("Limite do Cheque Especial: ");
@@ -55,11 +57,11 @@ namespace MiniBanco.ConsoleApp
                             }
                             else if (tipoConta == "2")
                             {
-                                Console.Write("Nome do Empregador: ");
-                                string empregador = Console.ReadLine();
-                                Console.Write("Limite de Saques Mensais: ");
-                                int limiteSaques = int.Parse(Console.ReadLine());
-                                contas.Add(new ContaSalario(titular, numero, saldo, empregador, limiteSaques));
+                                Console.Write("Taxa de Rendimento (%): ");
+                                double taxa = double.Parse(Console.ReadLine());
+                                Console.Write("Dia do Aniversário: ");
+                                int dia = int.Parse(Console.ReadLine());
+                                contas.Add(new ContaPoupanca(titular, numero, saldo, taxa, dia));
                             }
                             else if (tipoConta == "3")
                             {
@@ -71,10 +73,8 @@ namespace MiniBanco.ConsoleApp
                             }
                             else
                             {
-                                Console.WriteLine("Tipo de conta inválido");
-                                break;
+                                Console.WriteLine("Tipo de conta inválido.");
                             }
-
                             Console.WriteLine("Conta cadastrada com sucesso!");
                         }
                         catch (Exception ex)
@@ -163,7 +163,7 @@ namespace MiniBanco.ConsoleApp
                                 Console.WriteLine($"  - Titular: {conta.Titular} | Conta: {conta.Numero}");
                                 Console.WriteLine($"  - Saldo Atual: R$ {conta.Saldo:F2}");
                                 
-                                double saude = motor.CalcularIndiceSaude(conta);
+                                double saude = motor.CalcularIndice(conta);
                                 int pontuacaoMaxima = conta.Extrato.Count * 10;
                                 int pontuacaoObtida = (int)((saude / 100) * pontuacaoMaxima);
 
