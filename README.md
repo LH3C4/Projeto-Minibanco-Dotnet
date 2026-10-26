@@ -1,7 +1,7 @@
 # MiniBanco .NET - Motor de Gestão de Contas
 
 ## **Objetivo do Projeto**
-Este projeto é uma aplicação de console desenvolvida em C# (.NET 10) para simular um sistema de gestão de contas bancárias e análise de saúde financeira. O objetivo principal do desenvolvimento foi aplicar rigorosamente os pilares da **Programação Orientada a Objetos (POO)** — como encapsulamento, herança e polimorfismo —, separar a aplicação em camadas lógicas (Models, Exceptions, Services) e processar algoritmos de análise utilizando estritamente laços de repetição tradicionais (proibido o uso de LINQ).
+Este projeto é uma aplicação de console desenvolvida em C# (.NET 10) para simular um sistema de gestão de contas bancárias e análise de saúde financeira. O objetivo principal do desenvolvimento foi aplicar rigorosamente os pilares da **Programação Orientada a Objetos (POO)** — como encapsulamento, herança e polimorfismo —, separar a aplicação em camadas lógicas (Models, Exceptions, Services) e processar algoritmos de análise utilizando estritamente laços de repetição.
 
 ## **Regras de Negócio**
 O sistema simula o funcionamento de um banco através das seguintes regras:
